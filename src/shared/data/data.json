@@ -1,0 +1,20 @@
+[
+  {
+    "key": "0",
+    "heading": "enter your full name",
+    "status": false,
+    "component": "Name"
+  },
+  {
+    "key": "1",
+    "heading": "enter your phone number",
+    "status": false,
+    "component": "Number"
+  },
+  {
+    "key": "2",
+    "heading": "enter additional information",
+    "status": true,
+    "component": "Information"
+  }
+]

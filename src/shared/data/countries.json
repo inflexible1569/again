@@ -1,0 +1,14 @@
+{
+  "Russia": {
+    "name": "Russia",
+    "code": "7",
+    "regions": [
+      "Moscow Oblast",
+      "Leningrad Oblast"
+    ]
+  },
+  "Belarus": {
+    "name": "Belarus",
+    "code": "375"
+  }
+}
