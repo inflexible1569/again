@@ -14,14 +14,7 @@ const Name = (move, uniqueKey) => {
     useEffect(() => setPair([/^[a-zA-Z]+$/i.test(name), pair[1]]), [name])
     useEffect(() => setPair([pair[0], /^[a-zA-Z]+$/i.test(lastName)]), [lastName])
 
-    useEffect(() => {
-        console.log(valid)
-        if (pair[0] && pair[1]) {
-            setValid(true)
-        } else {
-            setValid(false)
-        }
-    }, [pair])
+    useEffect(() => pair[0] && pair[1] ? setValid(true) : setValid(false), [pair])
 
     return (
         <div className={styles.item}>
@@ -52,7 +45,7 @@ const Name = (move, uniqueKey) => {
                         }}
                     />
                 </div>
-                <Buttons move={move} uniqueKey={uniqueKey} valid={valid} />
+                <Buttons move={move} uniqueKey={uniqueKey} valid={valid} pair={[{ name }, { 'last name': lastName }]} />
             </form>
             <p className={styles.string}>The first and last name can contain only letters.</p>
         </div>

@@ -2,7 +2,7 @@
   {
     "key": "0",
     "heading": "enter your full name",
-    "status": false,
+    "status": true,
     "component": "Name"
   },
   {
@@ -14,7 +14,7 @@
   {
     "key": "2",
     "heading": "enter additional information",
-    "status": true,
+    "status": false,
     "component": "Information"
   }
 ]

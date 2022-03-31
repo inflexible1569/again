@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 
 import styles from '../styles/Buttons.module.css'
 
-const Buttons = ({ move, uniqueKey, valid }) => {
+const Buttons = ({ move, uniqueKey, valid, pair }) => {
 
-    const next = (event) => move(event, 'next', uniqueKey, valid)
-    const previous = (event) => move(event, 'previous', uniqueKey, valid)
+    const next = (event) => move(event, 'next', uniqueKey, valid, pair)
+    const previous = (event) => move(event, 'previous', uniqueKey, valid, pair)
 
     return (
         <div className={styles.buttons}>
