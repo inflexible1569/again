@@ -43,16 +43,24 @@
 }
 
 .result {
-    width: 50%;
     height: fit-content;
     background: #f5f5f5;
     z-index: 50;
     padding: 3.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: min(100%, 35.35rem);
+    line-break: anywhere;
 }
 
 .item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+}
+
+.name {
+    font-size: 1.85rem;
+    font-weight: 500;
 }
 
 .hidden {

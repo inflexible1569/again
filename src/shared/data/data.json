@@ -1,19 +1,19 @@
 [
   {
     "key": "0",
-    "heading": "enter your full name",
+    "heading": "введите полное имя",
     "status": true,
     "component": "Name"
   },
   {
     "key": "1",
-    "heading": "enter your phone number",
-    "status": false,
+    "heading": "введите номер телефона",
+    "status": true,
     "component": "Number"
   },
   {
     "key": "2",
-    "heading": "enter additional information",
+    "heading": "введите дополнительную информацию",
     "status": false,
     "component": "Information"
   }

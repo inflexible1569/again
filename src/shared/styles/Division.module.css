@@ -24,6 +24,7 @@
     padding: .35rem .55rem;
     font-size: 1.35rem;
     width: 100%;
+    resize: none;
 }
 
 .block {

@@ -11,8 +11,8 @@ const Name = (move, uniqueKey) => {
     const [valid, setValid] = useState(false)
     const [pair, setPair] = useState([false, false])
 
-    useEffect(() => setPair([/^[a-zA-Z]+$/i.test(name), pair[1]]), [name])
-    useEffect(() => setPair([pair[0], /^[a-zA-Z]+$/i.test(lastName)]), [lastName])
+    useEffect(() => setPair([/^[а-яА-Я]+$/i.test(name), pair[1]]), [name])
+    useEffect(() => setPair([pair[0], /^[а-яА-Я]+$/i.test(lastName)]), [lastName])
 
     useEffect(() => pair[0] && pair[1] ? setValid(true) : setValid(false), [pair])
 
@@ -20,7 +20,7 @@ const Name = (move, uniqueKey) => {
         <div className={styles.item}>
             <form className={styles.form} action="">
                 <div className={styles.division}>
-                    <label htmlFor="name">name</label>
+                    <label htmlFor="name">имя</label>
                     <input
                         className={styles.inputField}
                         id="name"
@@ -30,10 +30,11 @@ const Name = (move, uniqueKey) => {
                             setName(event.target.value.slice(0, 1).toUpperCase() +
                                 event.target.value.slice(1).toLowerCase())}
                         }
+                        maxLength={25}
                     />
                 </div>
                 <div className={styles.division}>
-                    <label htmlFor="lastName">last name</label>
+                    <label htmlFor="lastName">фамилия</label>
                     <input
                         className={styles.inputField}
                         id="lastName"
@@ -43,11 +44,12 @@ const Name = (move, uniqueKey) => {
                             setLastName(event.target.value.slice(0, 1).toUpperCase() +
                                 event.target.value.slice(1).toLowerCase())
                         }}
+                        maxLength={25}
                     />
                 </div>
                 <Buttons move={move} uniqueKey={uniqueKey} valid={valid} pair={[{ name }, { 'last name': lastName }]} />
             </form>
-            <p className={styles.string}>The first and last name can contain only letters.</p>
+            <p className={styles.string}>Имя и фамилия могут содержать только буквы.</p>
         </div>
     )
 

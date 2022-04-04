@@ -18,6 +18,8 @@ const Board = () => {
 
     const items = { 'Name': Name, 'Number': Number, 'Information': Information }
 
+    useEffect(() => console.log(result), [result])
+
     const move = (event, value, uniqueKey, valid, pair) => {
         event.preventDefault()
         const copy = [...array]
@@ -28,15 +30,28 @@ const Board = () => {
                         copy[i].status = false
                         copy[i + 1].status = true
                     }
-                    if (result.length < 4) {
-                        if (Array.isArray(pair)) {
-                            setResult([...result, ...pair])
-                        } else {
-                            setResult([...result, pair])
+                    if (valid) {
+                        if (result.length < 4) {
+                            if (Array.isArray(pair)) {
+                                setResult([...result, ...pair])
+                            } else {
+                                setResult([...result, pair])
+                            }
                         }
                     }
                     if (i === array.length - 1) {
                         setStatus(true)
+                    }
+                    if (result.length === 4) {
+                        const some = [...result]
+                        some.splice(-1, 1)
+                        some.push(pair)
+                        setResult(some)
+                    }
+                    if (valid === false && result.length === 4) {
+                        const same = result.slice(0, -1)
+                        console.log(same)
+                        setResult(same)
                     }
                 } else if (value === 'previous') {
                     if (i > 0) {
@@ -54,7 +69,7 @@ const Board = () => {
 
     return (
         <div className={styles.board}>
-            <h1 className={styles.title}>order registration</h1>
+            <h1 className={styles.title}>регистрация</h1>
             <div className={styles.items}>
                 {
                     array.map((item, index) => {
@@ -78,7 +93,7 @@ const Board = () => {
                         result.map((object) => {
                             return (
                                 <li className={styles.item}>
-                                    <span>{Object.entries(object)[0][0]}</span>
+                                    <span className={styles.name}>{Object.entries(object)[0][0]}</span>
                                     <span>{Object.entries(object)[0][1]}</span>
                                 </li>
                             )

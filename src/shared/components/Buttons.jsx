@@ -9,8 +9,8 @@ const Buttons = ({ move, uniqueKey, valid, pair }) => {
 
     return (
         <div className={styles.buttons}>
-            <button className={styles.button} onClick={previous}>previous</button>
-            <button className={styles.button} onClick={next}>next</button>
+            <button className={styles.button} onClick={previous}>назад</button>
+            <button className={styles.button} onClick={next}>далее</button>
         </div>
     )
 
