@@ -8,7 +8,7 @@
   {
     "key": "1",
     "heading": "введите номер телефона",
-    "status": true,
+    "status": false,
     "component": "Number"
   },
   {
